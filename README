@@ -1,0 +1,22 @@
+
+These set of classes allow you to use Amazon to download your music album cover images.  Your script will need to pass it the search string, which for amazon works best as "[album name] [artist]".
+
+Given these set of base classes you are able to add new search providers.  I.ve only written it for Amazon, but if there are others, extend the abstract class saAlbumCoverArtSearch and implement the execute() method.
+
+Requirements:
+
+ - PHP5 compiled with XML, file_get_contents open URL
+ - An Amazon Web Services account and private keys
+
+Example:
+
+In it's simplest form, here is an example:
+
+$album = new saAlbumCoverArt(
+  'Album Name',
+  'Artist ',
+  'path-to-save-cover-image'
+)->execute();
+
+
+This will save the album's cover art to the file and path given in in the arguments list.
